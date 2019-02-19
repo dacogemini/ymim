@@ -12,6 +12,4 @@ from . import views
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', contacts.views.ListContactView.as_view(),
-        name='contacts-list',),
 ]

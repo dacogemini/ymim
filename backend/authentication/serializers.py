@@ -1,12 +1,5 @@
 from django.contrib.auth.models import User, Group
-from django.views.generic import ListView
 from rest_framework import serializers
-from .models import Contact
-
-
-class ListContactView(ListView):
-    class Meta:
-        model = Contact
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
