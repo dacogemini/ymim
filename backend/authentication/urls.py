@@ -1,3 +1,4 @@
+from django.conf.urls import patterns, include, url
 from django.urls import include, path
 from rest_framework import routers
 from . import views
@@ -10,5 +11,7 @@ from . import views
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^$', contacts.views.ListContactView.as_view(),
+        name='contacts-list',),
 ]
