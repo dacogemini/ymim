@@ -18,12 +18,3 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-
-class AccountViewSet(viewsets.ModelViewSet):
-    """
-    A simple ViewSet for viewing and editing accounts.
-    """
-    queryset = Account.objects.all()
-    serializer_class = AccountSerializer
-    permission_classes = [IsAccountAdminOrReadOnly]
-
